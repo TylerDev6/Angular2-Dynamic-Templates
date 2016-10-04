@@ -1,0 +1,52 @@
+<form (ngSubmit)="submitForm()" #carForm="ngForm" novalidate>
+    <div class="form-group" [class.has-error]="isInvalid(carModelInput, carForm)">
+        <label for="carMake" class="control-label">Car Make</label>
+        <input type="text" id="carMake" class="form-control" name="carMake" [(ngModel)]="car.make" #carMakeInput="ngModel" required/>
+        <span class="help-block" *ngIf="isInvalid(carMakeInput, carForm)">Car Make is required.</span>
+    </div>
+
+    <div class="form-group" [class.has-error]="isInvalid(carModelInput, carForm)">
+        <label for="carModel" class="control-label">Last Name*</label>
+        <input type="text" id="carModel" class="form-control" name="carModel" [(ngModel)]="car.model" #carModelInput="ngModel" required/>
+        <span class="help-block" *ngIf="isInvalid(carModelInput, carForm)">Car Model is required.</span>
+    </div>
+
+    <div class="form-group">
+        <label for="year" class="control-label">Year</label>
+        <input type="number" class="form-control" id="year" name="year" [(ngModel)]="car.year"/>
+    </div>
+
+    <div class="form-group">
+        <label for="engine" class="control-label">Gender</label>
+        <input type="text" class="form-control" id="engine" name="engine" [(ngModel)]="car.engine" disabled/>
+        <button type="button" class="btn" (click)="openModal()">Customize</button>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!carForm.valid">Submit</button>
+</form>
+
+<template #engine>
+    <div class="modal-header">
+        <h4 class="modal-title">Engine</h4>
+    </div>
+    <div class="modal-body">
+        <p>Customize Engine Options</p>
+        <div class="form-group">
+            <label for="size" class="control-label"></label>
+            <select id="size" name="size" class="form-control" [(ngModel)]="engine[0]">
+                <option value="3.2L" selected>3.2 L</option>
+                <option value="4.2L">4.2 L</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="engineType" class="control-label"></label>
+            <select id="engineType" name="engineType" class="form-control" [(ngModel)]="engine[1]">
+                <option value="TFI" selected>TFI</option>
+                <option value="TDI">TDI</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelModal()">Cancel</button>
+        <button type="button" class="btn btn-secondary" (click)="saveModal()">Done</button>
+    </div>
+</template>
