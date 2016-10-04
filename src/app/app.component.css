@@ -1,0 +1,9 @@
+.option-container {
+    padding: 5px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.option-container a {
+    margin-left: 10px;
+}

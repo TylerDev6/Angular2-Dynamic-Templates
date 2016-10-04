@@ -17,30 +17,30 @@
     </div>
 
     <div class="form-group">
-        <label for="engine" class="control-label">Gender</label>
+        <label for="engine" class="control-label">Engine</label>
         <input type="text" class="form-control" id="engine" name="engine" [(ngModel)]="car.engine" disabled/>
-        <button type="button" class="btn" (click)="openModal()">Customize</button>
     </div>
+    <button type="button" class="btn" (click)="openModal()">Customize</button>
     <button type="submit" class="btn btn-primary" [disabled]="!carForm.valid">Submit</button>
 </form>
 
-<template #engine>
+<template #engineTemplate>
     <div class="modal-header">
         <h4 class="modal-title">Engine</h4>
     </div>
     <div class="modal-body">
         <p>Customize Engine Options</p>
         <div class="form-group">
-            <label for="size" class="control-label"></label>
-            <select id="size" name="size" class="form-control" [(ngModel)]="engine[0]">
-                <option value="3.2L" selected>3.2 L</option>
+            <label for="size" class="control-label">Size</label>
+            <select id="size" name="size" #size class="form-control" [ngModel]="engine.size">
+                <option value="3.2L">3.2 L</option>
                 <option value="4.2L">4.2 L</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="engineType" class="control-label"></label>
-            <select id="engineType" name="engineType" class="form-control" [(ngModel)]="engine[1]">
-                <option value="TFI" selected>TFI</option>
+            <label for="engineType" class="control-label">Type</label>
+            <select id="engineType" name="engineType" #engineType class="form-control" [ngModel]="engine.type">
+                <option value="TFI">TFI</option>
                 <option value="TDI">TDI</option>
             </select>
         </div>
