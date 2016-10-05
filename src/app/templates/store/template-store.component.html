@@ -1,0 +1,22 @@
+<template [dv6-template-index]="'first'" let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">First Template</h4>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="d()">Cancel</button>
+        <button type="button" class="btn btn-secondary" (click)="c()">Done</button>
+    </div>
+</template>
+<template [dv6-template-index]="'second'">
+    <div class="modal-header">
+        <h4 class="modal-title">Second Template</h4>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelModal()">Cancel</button>
+        <button type="button" class="btn btn-secondary" (click)="saveModal()">Done</button>
+    </div>
+</template>
+<template [dv6-template-index]="'third'">
+    <dv6-modal-class>
+    </dv6-modal-class>
+</template>

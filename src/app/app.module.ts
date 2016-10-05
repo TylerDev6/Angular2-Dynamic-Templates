@@ -6,10 +6,16 @@ import {AppComponent} from "./app.component";
 import {routing} from "./app.routes";
 import {NgModule} from "@angular/core";
 import {SelectorComponent} from "./selector.component";
+import {StoreSelectorComponent} from "./templates/store/store-selector.component";
+import {TemplateStoreComponent} from "./templates/store/template-store.component";
+import {TemplateIndexDirective} from "./templates/store/template-index.directive";
+import {TemplateStore} from "./templates/template-store";
+import {ModalClassComponent} from "./templates/store/modal-class.component";
 
 @NgModule({
 	imports: [BrowserModule, FormsModule, NgbModule, routing],
-	declarations: [AppComponent, SelectorComponent, InlineFormComponent],
+	declarations: [AppComponent, TemplateIndexDirective, SelectorComponent, InlineFormComponent, StoreSelectorComponent, TemplateStoreComponent, ModalClassComponent],
+	providers: [TemplateStore],
 	bootstrap: [AppComponent]
 })
 
