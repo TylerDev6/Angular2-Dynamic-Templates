@@ -1,0 +1,12 @@
+<div class="form-group option-container">
+    <button type="button" (click)="openModal('ClassTemplate')">Class Modal</button>
+    <button type="button" (click)="openModal('CustomTemplate')">Custom Modal</button>
+</div>
+<div class="form-group option-container">
+    <label for="title" class="control-label">Title</label>
+    <input type="text" id="title" name="title" #title [(ngModel)]="config.title" />
+</div>
+<div class="form-group option-container">
+    <label for="message" class="control-label">Message</label>
+    <input type="text" id="message" name="message" #message [(ngModel)]="config.message" />
+</div>
