@@ -11,8 +11,8 @@ import {TemplateWrapperBase} from "./template-wrapper-base";
 			<p>{{config?.message}}</p>
 		</div>
 		<div class="modal-footer">
-			<button type="button" class="btn btn-secondary" (click)="d()">Cancel</button>
-			<button type="button" class="btn btn-secondary" (click)="c()">Done</button>
+			<button type="button" class="btn" (click)="d()">Cancel</button>
+			<button type="button" class="btn" (click)="c()">Done</button>
 		</div>
 	</template>`
 })
